@@ -17,10 +17,22 @@
         min-height: 100vh;
       }
     </style>
+    <script>
+      window.onload = function(){
+          var firstMonday = new Date(2018, 10, 5);
+          var today = new Date(2018, 10, 26);
+          var diff = Math.round((today - firstMonday)/(1000*60*60*24));
+          if ((diff % 14) <= 6) {
+            document.getElementById('output').innerHTML = "It's no-gi this Sunday";
+          } else {
+            document.getElementById('output').innerHTML = "Yes, bring your gi this Sunday!";
+          }
+      };
+    </script>
   </head>
   <body class="bg-dark text-white">
     <div class="center-screen">
-      <h1>Bring your gi this Sunday!</h1>
+      <h1 id="output"></h1>
     </div>
   </body> 
 </html>
